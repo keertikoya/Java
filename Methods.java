@@ -23,7 +23,6 @@ public class Methods {
     }
 
     public static int multiply(int a, int b){ // will only return an INT
-        int c = a*b;
-        return(c); // sends c back to main method
+        return(a*b); // sends c back to main method
     }
 }
