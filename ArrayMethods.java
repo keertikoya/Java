@@ -1,63 +1,74 @@
 // Keerti Koya
-// 9/30/24
+// 10/6/24
 
 public class ArrayMethods {
-    public static void main(String[] args) {
-        int[] arr = {5, 6, 7, 9};
-        int a = 3;
-        int b = 8;
-        placement(arr,a,b);
-    }
 
     // add an element to end of the array
-    public static int[] add (int[] arr, int a){
-        int[] temp = new int[arr.length+1];
+    public static int[] add(int[] arr, int a) {
+        int[] temp = new int[arr.length+1]; // creates new array with length 1 greater
         for( int i = 0; i < arr.length; i++)
             temp[i] = arr[i];
 
-        temp[temp.length-1] = a;
+        temp[temp.length-1] = a; // sets last value of array to value passed into method
         return temp;
     }
 
-    // adds an element to where you want to put it (pushes everything else back)
-    public static int[] placement (int[] arr, int a, int placement){
-        int[] temp = new int[arr.length+1];
-        System.out.println("length: " + temp.length);
-        for (int i = placement+1; i < temp.length; i++){
-            temp[i] = temp[i-1];
-            System.out.println("added " + temp[i-1] + " to " + temp[i]);
+    // add an element to where you want to put it
+    public static int[] add (int[] arr, int newValue, int index){
+        int[] temp = new int[arr.length+1]; // creates new array with length 1 greater
+        int j = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (i != index) {
+                temp[i+j] = arr[i]; // inputs all elements of passed array into new array
+            }
+            else {
+                j++;
+            }
         }
-        for (int i = 0; i < arr.length; i++){
-            System.out.println(arr[i]);
-        }
-        temp[placement] = a;
+        temp[index+1] = arr[index];
+        temp[index] = newValue; // sets the index of the new value to that value
         return temp;
     }
 
-//    // retrieves the item from slot number given
-//    public static int get (int[] arr, int a){
-//
-//    }
-//
-//    // replace the number at place with item
-//    public static int[] replace (int[] arr, int place, int item){
-//
-//    }
-//
-//    // remove element at end of array
-//    public static int[] remove(int[] arr){
-//
-//    }
-//
-//    // removes element from specified index
-//    public static int[] remove(int[] arr, int place){
-//
-//    }
+    // retrieve the item from slot placement
+    public static int get(int[] arr, int placement) {
+        return arr[placement]; // returns element at that index
+    }
+
+    // replaces an item at "place" with "item"
+    public static int[] replace( int[] arr, int placement, int item) {
+        arr[placement] = item; // replaces element with passed item value
+        return arr;
+    }
+
+    // remove from end of the array and reduce size by 1
+    public static int[] remove(int[] arr) {
+        int[] temp = new int[arr.length - 1]; // creates a new array with size 1 less than passed array
+        for (int i = 0; i < arr.length-1; i++) { // adds every element of passed array to new array (besides the last element)
+            temp[i] = arr[i];
+        }
+        return temp; // returns updated array
+    }
+
+    // remove from place and reduce size by 1
+    public static int[] remove(int[] arr, int placement) {
+        int j = 0;
+        int[] temp = new int[arr.length - 1]; // creates a new array with size 1 less than passed array
+        for (int i = 0; i < arr.length; i++) {
+            if (i != placement) { // inputs all elements of passed array into new array besides element chosen to remove
+                temp[i-j] = arr[i];
+            }
+            else {
+                j++; // skips the element chosen to remove
+            }
+        }
+        return temp; // returns updated array
+    }
 
     // displays every value of array
     public static void display (int[] arr){
         for (int i = 0; i < arr.length; i++){
-            System.out.println(arr[i]);
+            System.out.print(arr[i] + " "); // prints every element of array
         }
     }
 }
