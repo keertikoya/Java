@@ -10,6 +10,7 @@ public class StringManipulation {
         System.out.println(x.substring(3)); // lo world
         System.out.println(x.substring(3,6)); // lo
         System.out.println(x.substring(0,8)); // hello wo
+        System.out.println(x.substring(10,11));
 
         // length
         System.out.println(x.length()); // 11

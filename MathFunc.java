@@ -23,5 +23,7 @@ public class MathFunc {
 
         // random 0 <= x < 1
         System.out.println(Math.random());
+
+        System.out.println((Math.random() + 1)*2);
     }
 }
