@@ -6,8 +6,8 @@ import java.util.*;
 
 public class PointLine {
     public static void main(String[] args) {
-        Point first = new Point (1, 3); // creates first Point object
-        Point second = new Point(4,5); // creates second Point object
+        Point first = new Point(1, 3); // creates first Point object
+        Point second = new Point(4, 5); // creates second Point object
 
         System.out.println(first); // uses toString() method from Point class
         System.out.println(second); // uses toString() method from Point class
@@ -16,5 +16,15 @@ public class PointLine {
         System.out.println(line.slopeInt()); // calls slopeInt() method from Line class
         System.out.println(line.standard()); // calls standard() method from Line class
         System.out.println(line); // uses toString() method from Line class
+
+
+
+        for (int i = 0; i < 5; i++){
+            System.out.println("here");
+            if (i > 1){
+                System.out.println("hi");
+                i=10;
+            }
+        }
     }
 }
