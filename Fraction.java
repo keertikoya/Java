@@ -34,17 +34,23 @@ public class Fraction{
     }
 
     public static void simplify(Fraction a) {
-        int count = 100;
-        int common = 0; // stores final common multiple
-        while (count <= 100 && count > 0){
-            if ((a.getNum() % count == 0) && (a.getDen() % count == 0)){ // check if both nums are divisible
-                common = count;
-                count = -5; // break loop
+        int common = gcf(a.getNum(), a.getDen()); // find the greatest common factor
+        a.setNum(a.getNum() / common); // simplify numerator
+        a.setDen(a.getDen() / common); // simplify denominator
+    }
 
-            }
-            count -= 1;
+    public static int gcf(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
         }
-        num = (a.getNum() / common);
-        den = (a.getDen() / common);
+        return Math.abs(a); // make sure the GCF is positive
+    }
+
+    public MixedFraction convertMixedFraction() {
+        int whole = getNum() / getDen(); // calculate the whole number
+        int newNumerator = getNum() % getDen(); // calculate the new numerator
+        return new MixedFraction(newNumerator, getDen(), whole); // return a MixedFraction
     }
 }
