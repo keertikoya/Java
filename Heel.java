@@ -27,4 +27,11 @@ public class Heel extends Shoe{
 
     // toString
     // custom methods
+
+    public void stuff1(){
+        System.out.println("I am Heel's stuff1");
+    }
+    public void stuff2(){
+        System.out.println("I am Heel's stuff2");
+    }
 }

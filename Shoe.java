@@ -75,6 +75,13 @@ public class Shoe {
         increaseSize();
         allBlack();
     }
+
+    public void stuff1(){
+        System.out.println("I am Shoe's stuff1");
+    }
+    public void stuff2(){
+        System.out.println("I am Shoe's stuff2");
+    }
 }
 
 
