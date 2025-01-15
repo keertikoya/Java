@@ -24,16 +24,17 @@ public class Triangle{
         }
 
         public boolean rightTriangle(){
-            double s1 = a.slope(b);
-            double s2 = b.slope(c);
-            double s3 = a.slope(c);
+//            double s1 = a.slope(b);
+//            double s2 = b.slope(c);
+//            double s3 = a.slope(c);
 
-            if (s1 * (-1) == s2 || s2 * (-1) == s3 || s1 * (-1) == s3){
-                return true;
-            }
-            else{
-                return false;
-            }
+//            if (s1 * (-1) == s2 || s2 * (-1) == s3 || s1 * (-1) == s3){
+//                return true;
+//            }
+//            else{
+//                return false;
+//            }
+            return false;
         }
 
         public String toString(){
