@@ -14,5 +14,16 @@ public class Polymorphism {
 
         z.stuff1();
         z.stuff2();
+
+
+        Heel a = new FancyHeel();
+        // below: grandparent polymorphism model
+        Shoe b = new FancyHeel(7, "black", 2, "banquet");
+
+        System.out.println(b.getSize());
+        // System.out.println(b.getHeight());  does NOT work because getHeight() is in heel class
+        System.out.println(b); // uses FancyHeel's toString because it was overwritten
+        //b.m1() // uses Shoe classes m1 (never overwritten)
+        //b.m2() // uses FancyHeel m2 since it was overwritten
     }
 }
